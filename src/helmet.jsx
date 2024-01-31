@@ -17,11 +17,17 @@ export default function HelmetMetaData(props) {
   let hashtag = props.hashtag !== undefined ? props.hashtag : "#camperstribe";
   return (
     <Helmet>
+      <title>React App111</title>
       <meta property="og:locale" content="en_US" />
       <meta property="og:type" content="website" />
       <meta property="og:title" content={"og_title"} />
       <meta property="og:quote" content={"og:quote"} />
-      <meta property="og:image" content={image} />
+      <meta
+        property="og:image"
+        content={
+          "https://media.istockphoto.com/id/1455965102/photo/beautiful-sunrise-bursting-through-the-eucalyptus-trees-as-it-rises-over-a-mountain-beside-a.jpg?s=1024x1024&w=is&k=20&c=wYGK__qz9i8M7NfBvkNtkfbWNoiBxDLGi64PQjOo_wY="
+        }
+      />
       <meta property="og:description" content={"og:description"} />
     </Helmet>
   );
