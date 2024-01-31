@@ -10,9 +10,10 @@ function App() {
         <meta
           property="og:image"
           content={
-            "https://media.istockphoto.com/id/1455965102/photo/beautiful-sunrise-bursting-through-the-eucalyptus-trees-as-it-rises-over-a-mountain-beside-a.jpg?s=1024x1024&w=is&k=20&c=wYGK__qz9i8M7NfBvkNtkfbWNoiBxDLGi64PQjOo_wY="
+            "https://media.gettyimages.com/id/184944186/photo/quaid-e-azam.jpg?s=1024x1024&w=gi&k=20&c=ALjpB2eG-5uf0-UFRvtpqjgYisdHvwWlM-Z_KGqA-3w="
           }
         />
+        <meta property="og:description" content="new_description" />
         {/* Add more meta tags as needed */}
       </Helmet>
       <header className="App-header">
