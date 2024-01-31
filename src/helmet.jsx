@@ -1,9 +1,6 @@
 import React from "react";
 import { Helmet } from "react-helmet";
-import { useLocation } from "react-router-dom";
 export default function HelmetMetaData(props) {
-  let location = useLocation();
-  let currentUrl = "http://www.camperstribe.com" + location.pathname;
   let quote = props.quote !== undefined ? props.quote : "";
   let title =
     props.title !== undefined
