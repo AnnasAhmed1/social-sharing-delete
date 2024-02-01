@@ -24,12 +24,11 @@ const App = () => {
         <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
         <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
 
-        <meta property="og:title" content="title111" />
         <meta property="og:quote" content="quote" />
         <meta property="og:description" content="initial_description" />
 
         <meta property="og:image:alt" content="Image Alt Text" />
-        <meta property="og:type" content="article" />
+        <meta property="og:type" content="post" />
         <meta property="og:locale" content="en_GB" />
         <title>page2</title>
         {/* <Head></Head> */}
