@@ -4,7 +4,7 @@ import { Helmet, HelmetProvider } from "react-helmet-async";
 
 const App = () => (
   <HelmetProvider>
-    <Helmet>
+    <Helmet prioritizeSeoTags>
       <title>Page Title</title>
       <meta
         property="og:image"
