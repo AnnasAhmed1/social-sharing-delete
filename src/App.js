@@ -3,7 +3,7 @@ import React from "react";
 import { Helmet, HelmetProvider } from "react-helmet-async";
 
 const App = () => (
-  <HelmetProvider>
+  <HelmetProvider canUseDOM>
     <Helmet prioritizeSeoTags>
       <title>Page Title</title>
       <meta
