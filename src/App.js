@@ -32,6 +32,21 @@ const checkWhatsApp = () => {
   }
 };
 
+var fallbackToStore = function () {
+  window.location.replace(
+    "https://play.google.com/store/apps/details?id=packgename"
+  );
+};
+var openApp2 = function () {
+  window.location.replace(
+    "intent://app/SplashScreen#Intent;scheme=app_;package=com.sdf.android.dsds;end"
+  );
+};
+var triggerAppOpen = function () {
+  openApp();
+  setTimeout(fallbackToStore, 700);
+};
+
 const checkWhatsApp2 = () => {
   if (isMobile) {
     // Assuming WhatsApp's custom URL scheme is 'whatsapp://'
@@ -57,6 +72,7 @@ const App = () => (
     <br />
     <button onClick={checkWhatsApp2}>chk whtsapp</button>
     <br />
+    <button onClick={triggerAppOpen}>chk whtsapp final</button>
   </div>
 );
 
