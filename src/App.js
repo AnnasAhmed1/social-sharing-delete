@@ -34,16 +34,16 @@ const checkWhatsApp = () => {
 
 var fallbackToStore = function () {
   window.location.replace(
-    "https://play.google.com/store/apps/details?id=packgename"
+    "https://play.google.com/store/apps/details?id=com.whatsapp"
   );
 };
 var openApp2 = function () {
   window.location.replace(
-    "intent://app/SplashScreen#Intent;scheme=app_;package=com.sdf.android.dsds;end"
+    "intent://app/SplashScreen#Intent;scheme=app_;package=com.whatsapp;end"
   );
 };
 var triggerAppOpen = function () {
-  openApp();
+  openApp2();
   setTimeout(fallbackToStore, 700);
 };
 
