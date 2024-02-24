@@ -1,7 +1,19 @@
 // App.js
 import React from "react";
 import { Helmet, HelmetProvider } from "react-helmet-async";
+const openApp = () => {
+  const appPackageName = "com.whatsapp";
+  // Attempt to open the app
+  window.location.href = `intent://${appPackageName}/#Intent;package=${appPackageName};scheme=http;end;`;
 
+  // Redirect to Play Store if the app is not installed
+  setTimeout(() => {
+    window.open(
+      `https://play.google.com/store/apps/details?id=${appPackageName}`,
+      "_blank"
+    );
+  }, 3000); // Redirect after 3 seconds, adjust as needed
+};
 const App = () => (
   <HelmetProvider canUseDOM>
     <Helmet title="new page" async prioritizeSeoTags>
@@ -12,6 +24,8 @@ const App = () => (
       />
     </Helmet>
     <h1>Hello World</h1>
+    <button onClick={openApp}>link</button>
+
     {/* Your other application components go here */}
   </HelmetProvider>
 );
