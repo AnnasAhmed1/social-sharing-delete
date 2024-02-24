@@ -14,20 +14,30 @@ const openApp = () => {
     );
   }, 3000); // Redirect after 3 seconds, adjust as needed
 };
+const checkWhatsApp = () => {
+  const userAgent = navigator.userAgent || navigator.vendor || window.opera;
+
+  // Check if the user is using a mobile device
+  if (/android/i.test(userAgent) || /iPad|iPhone|iPod/.test(userAgent)) {
+    // Check if WhatsApp is supported by the browser
+    if (/WhatsApp/.test(userAgent)) {
+      alert("WhatsApp is installed on your device!");
+    } else {
+      alert("WhatsApp is not installed on your device.");
+      // You can also prompt the user to open WhatsApp using a deep link
+      // window.location.href = 'whatsapp://';
+    }
+  } else {
+    alert("This feature is available only on mobile devices.");
+  }
+};
+
 const App = () => (
-  <HelmetProvider canUseDOM>
-    <Helmet title="new page" async prioritizeSeoTags>
-      <title>Page Title</title>
-      <meta
-        property="og:image"
-        content="https://media.gettyimages.com/id/184944186/photo/quaid-e-azam.jpg?s=612x612&w=0&k=20&c=7mRHDKfBWbpmiTto_w_oMm4EeboU9tEDO_JXke01P5I="
-      />
-    </Helmet>
+  <div>
     <h1>Hello World</h1>
     <button onClick={openApp}>link</button>
-
-    {/* Your other application components go here */}
-  </HelmetProvider>
+    <button onClick={checkWhatsApp}>link</button>
+  </div>
 );
 
 export default App;
