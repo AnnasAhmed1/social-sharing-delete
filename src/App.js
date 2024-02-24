@@ -1,6 +1,6 @@
 // App.js
 import React from "react";
-import { Helmet, HelmetProvider } from "react-helmet-async";
+import { isMobile } from "react-device-detect";
 const openApp = () => {
   const appPackageName = "com.whatsapp";
   // Attempt to open the app
@@ -32,11 +32,31 @@ const checkWhatsApp = () => {
   }
 };
 
+const checkWhatsApp2 = () => {
+  if (isMobile) {
+    // Assuming WhatsApp's custom URL scheme is 'whatsapp://'
+    const hasWhatsAppInstalled = !!navigator.userAgent.match(/WhatsApp/);
+    if (hasWhatsAppInstalled) {
+      alert("WhatsApp is installed on your device!");
+    } else {
+      alert("WhatsApp is not installed on your device.");
+      // You can also prompt the user to open WhatsApp using a deep link
+      // window.location.href = 'whatsapp://';
+    }
+  } else {
+    alert("This feature is available only on mobile devices.");
+  }
+};
+
 const App = () => (
   <div>
     <h1>Hello World</h1>
     <button onClick={openApp}>link</button>
-    <button onClick={checkWhatsApp}>link</button>
+    <br />
+    <button onClick={checkWhatsApp}>chk whtsapp</button>
+    <br />
+    <button onClick={checkWhatsApp2}>chk whtsapp</button>
+    <br />
   </div>
 );
 
